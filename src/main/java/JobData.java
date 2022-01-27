@@ -101,23 +101,23 @@ public class JobData {
         // TODO - implement this method
         ArrayList<HashMap<String, String>> jobsValue = new ArrayList<>();
         int match;
+        if(value == ""){
+            return allJobs;
+        }
         for (int i = 0; i< allJobs.size();i++){//HashMap<String, String> row : allJobs) {
             match = 0;
-            for(String key: allJobs.get(i).keySet()){
-                if (allJobs.get(i).get(key).contains(value)){
+            HashMap<String, String> row = allJobs.get(i);
+            for(String key: row.keySet()){
+                String val = row.get(key);
+                if (val.contains(value)){
                     match++;
                 }
             }
             if(match > 0){
-                jobsValue.add(allJobs.get(i));
+                jobsValue.add(row);
             }
-//            String aValue = row.get();
-
-//            if (row.containsValue(value)) {
-//                jobsValue.add(row);
-//            }
         }
-        return null;
+        return jobsValue;
     }
 
     /**
