@@ -58,7 +58,7 @@ public class TechJobs {
                 String searchField = getUserSelection("Search by:", columnChoices);
 
                 // What is their search term?
-                System.out.println("\nSearch term:");
+                System.out.println("\r\nSearch term:");
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
@@ -87,7 +87,7 @@ public class TechJobs {
 
         do {
 
-            System.out.println("\n" + menuHeader);
+            System.out.println("\r\n" + menuHeader);
 
             // Print available choices
             for (int j = 0; j < choiceKeys.length; j++) {
@@ -120,15 +120,17 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-
+        System.out.println("\r");
         if(someJobs.size()>0) {
             for (int i = 0; i < someJobs.size(); i++) {
-                String output = "\n*****\n";
+//                String output = ;
+                System.out.println("*****\r");
                 for (String key : someJobs.get(i).keySet()) {
-                    output = output.concat(key + ": " + someJobs.get(i).get(key) + "\n");
+                    System.out.println(key + ": " + someJobs.get(i).get(key) + "\r");
+//                    output = output.concat(key + ": " + someJobs.get(i).get(key) + "\r\n");
                 }
-                output = output.concat("*****");
-                System.out.println(output);
+//                output = output.concat();
+                System.out.print("*****\r");
             }
 
         }else{
